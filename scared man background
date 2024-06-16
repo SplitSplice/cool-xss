@@ -1,0 +1,8 @@
+<script>
+function changeBackground() {
+    document.body.style.backgroundImage = 'url("https://www.shutterstock.com/image-photo/scared-man-running-away-grimace-260nw-70797481.jpg")';
+    alert("Nihon on top!")
+}
+</script
+
+<a href="#" onclick="changeBackground()">Click me!</a>
