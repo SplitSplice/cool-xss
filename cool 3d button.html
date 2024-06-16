@@ -1,0 +1,40 @@
+<script>
+document.body.innerHTML += `
+  <style>
+    .tilt-button {
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 16px;
+      color: #fff;
+      background-color: #007BFF;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: transform 0.1s;
+      perspective: 1000px;
+    }
+
+    .tilt-button:focus {
+      outline: none;
+    }
+  </style>
+
+  <button class="tilt-button">Hover me!</button>
+
+  <script>
+    const button = document.querySelector('.tilt-button');
+
+    button.addEventListener('mousemove', function(e) {
+      const rect = button.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+
+      button.style.transform = \`rotateX(\${-y / 10}deg) rotateY(\${x / 10}deg)\`;
+    });
+
+    button.addEventListener('mouseleave', function() {
+      button.style.transform = 'rotateX(0) rotateY(0)';
+    });
+  </script>
+`;
+</script>
